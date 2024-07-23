@@ -58,3 +58,7 @@ The files for the frontend will be generated in /dist.
 ## Other Applications
 
 Although I have developed this system with Desktop Godot games in mind, in principle, the frontend can be reused in many different contexts and the Godot part of the code could be rewritten for other languages to obtain a similar degree of security in other contexts.
+
+## License
+
+Free-to-use and modify with attribution to NumDev2310.
