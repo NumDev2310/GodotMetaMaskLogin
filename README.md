@@ -27,6 +27,20 @@ The login system starts with peers connected in a regular Godot setting. This co
 
 All of this happens in less than a second.
 
+# Security features
+
+Before approving a login proof, the server checks that:
+* the user's peerID is the same at submission of the authentication proof than it was at the moment of the initial request to log in.
+* a record was made of the time at which the login request was initiated and does not allow a resolution of it after more than 30 seconds have elapsed.
+* the message signed was formed according to its standard (i.e. "I am peer X requesting ...").
+* the elliptic curve signature has been performed by an entity having access to the private key of the account (MetaMask).
+* the user bringing in the signature is the same as the one who requested the login.
+* the user bringing in the signature is the same as the one who signed with MetaMask (by displaying the Peerid to the user during the signature process).
+* a server-generated random number is in the possession of the multiplayer peer making the login request and the signer of the authorization.
+* the three items (the random generated number, the peerid and the timestamp) were present in the signed message.
+
+It should be noted that no feature has been implemented yet keeping a malicious actor from succeeding at a login attempt once, but with a random public address that he does not control. Of course because of the nature of the blockchain, such an attempt would lead to a public address that has no coins on it, so it doesn't matter from a blockchain security perspective, but it should be taken into account when integrating this system to your games.
+
 ## Example
 
 An example implementation of GodotMetaMaskLogin can be readily executed in Godot (Main.tscn). Make sure that your Godot Editor binary is C#-enabled and that the Nethereum packages have been added in Visual Studio 2022. Under Debug in Godot > Run Multiple Instances > Run 2 Instances will allow you to run two instances of the program, and one will naturally acquire the role of server during debugging. When moving code to production, you will need to remove those features which are meant only for a server presence to be simulated during debugging.
@@ -45,7 +59,7 @@ You will notice that the login system uses URL-encoding of parameters to pass da
 
 ## Optional Vite frontend hosting
 
-Because there is no server-side storing of information outside of the Godot server, the frontend really is just a generic piece of software that guides the browser toward delivering the Metamask signature to the Godot application. Therefore, you do not have to host your own copy of the frontend. You can leave the program as is and it will send users to https://auth.numdev.live and gather the correct information back to Godot. However, you may choose to generate you own version so you can use your own URL, and perhaps change the logo on the web frontend for that of your own game. In this case, you'll need to work from the /MetaMaskFE folder, which contains a Vite template that asks the user for the MetaMask signature.
+Because there is no server-side storing of information outside of the Godot server, the frontend really is just a generic piece of software that guides the browser toward delivering the Metamask signature to the Godot application. Therefore, you do not have to host your own copy of the frontend. You can leave the program as is and it will send users to https://auth.numdev.live and gather the correct information back to Godot. However, you may choose to generate your own version so you can use your own URL, and perhaps change the logo on the web frontend for that of your own game. In this case, you'll need to work from the /MetaMaskFE folder, which contains a Vite template that asks the user for the MetaMask signature.
 
 ```
 npm install
