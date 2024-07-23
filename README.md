@@ -22,8 +22,8 @@ The login system starts with peers connected in a regular Godot setting. This co
 * The frontend triggers a MetaMask signing request authenticating the three pieces of information
 * A Websocket connection is established with Godot to bring back the signature into the Godot environment
 * The client sends the signature proof to the server using Godot RPCs
-* The server verifies the validity of the login proof using 8 different security features (time elapsed, elliptical curve signature validity, peer authenticity, etc.)
-* If all requirements are met, the server informs the client that they are logged in and the client sees a "Log off" button as well as his public ETH address as a confirmation of his identity.
+* The server verifies the validity of the login proof using 8 different security features (time elapsed, elliptical curve signature validity, peer authenticity, etc. see below)
+* If all requirements are met, the server informs the client that they are logged in and the client sees a "Logout" button as well as his public ETH address as a confirmation of his identity.
 
 All of this happens in less than a second.
 
