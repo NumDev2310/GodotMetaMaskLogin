@@ -39,7 +39,7 @@ Before approving a login proof, the server checks that:
 * a server-generated random number is in the possession of the multiplayer peer making the login request and the signer of the authorization.
 * the three items (the random generated number, the peerid and the timestamp) were present in the signed message.
 
-It should be noted that no feature has been implemented yet keeping a malicious actor from succeeding at a login attempt once, but with a random public address that he does not control. Of course because of the nature of the blockchain, such an attempt would lead to a public address that has no coins on it, so it doesn't matter from a blockchain security perspective, but it should be taken into account when integrating this system to your games.
+It should be noted that no feature has been implemented yet keeping a malicious actor from succeeding at a login attempt once, but with a random public address that he does not control. Of course because of the nature of the blockchain, such an attempt would lead to a public address that has no coins on it, so it doesn't matter from a blockchain security perspective, but it should be taken into account when integrating this system to your games. Notably, the user would be incapable of logging with the same fraudulent account a second time, at a different timestamp, so he would effectively have built an unrecoverable account.
 
 ## Example
 
