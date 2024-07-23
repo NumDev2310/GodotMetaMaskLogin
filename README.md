@@ -3,7 +3,7 @@
 
 ![1](https://github.com/user-attachments/assets/7d021de6-510f-49ce-ad9b-f996ff575476)
 
-This login system has been designed first and foremost for Desktop Windows applications that are primarily not Web3-oriented but want to use MetaMask and the user's public ETH address as a logging method for a server-controlled multiplayer environment.
+This login system has been designed first and foremost for Desktop Windows applications that would require a MetaMask / Public ETH address as a logging method option for a server-controlled multiplayer environment.
 
 ## Requirements
 
