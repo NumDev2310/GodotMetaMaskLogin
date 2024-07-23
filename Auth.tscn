@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c67vti800m3el"]
+
+[ext_resource type="PackedScene" uid="uid://kjnwwo7e3v13" path="res://WebSocketServer.tscn" id="1_rnef0"]
+[ext_resource type="Script" path="res://Auth.gd" id="1_vxpxw"]
+
+[node name="Auth" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vxpxw")
+
+[node name="WebSocketServer" parent="." instance=ExtResource("1_rnef0")]
+
+[connection signal="client_connected" from="WebSocketServer" to="." method="_on_web_socket_server_client_connected"]
+[connection signal="client_disconnected" from="WebSocketServer" to="." method="_on_web_socket_server_client_disconnected"]
+[connection signal="message_received" from="WebSocketServer" to="." method="_on_web_socket_server_message_received"]

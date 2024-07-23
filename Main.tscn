@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://l487bpyu635f"]
+
+[ext_resource type="Script" path="res://GodotMetaMaskExample.gd" id="1_c8g0a"]
+
+[node name="GodotMetaMaskExample" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c8g0a")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 223.0
+offset_bottom = 89.0
+text = "Login with Metamask"
+
+[node name="LogoutButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 223.0
+offset_bottom = 89.0
+text = "Logout"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 117.0
+offset_right = 237.0
+offset_bottom = 140.0
+text = "Current Status: Not Logged In"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
