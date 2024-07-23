@@ -7,8 +7,7 @@ This login system has been designed first and foremost for Desktop Windows appli
 
 ## Requirements
 
-For the example to work as it stands, one needs a C#-enabled (mono) version of Godot 4.2.2 (see [here](https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_basics.html))
-Visual Studio 2022
+For the example to work as it stands, one needs a C#-enabled (mono) version of Godot 4.2.2 (see [here](https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_basics.html)) as well as Visual Studio 2022.
 In order for the C# part to run, you will need to install NuGet packages Nethereum.Util and Nethereum.Signer.
 
 Optionally, you will need npm v10.7.0 and Node.js v20.15.1 if you want to modify and host your own version of the browser-client part, although this is not needed as you can use https://auth.numdev.live (see below)
