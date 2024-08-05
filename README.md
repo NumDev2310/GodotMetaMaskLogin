@@ -74,4 +74,6 @@ Although I have developed this system with Desktop Godot games in mind, in princ
 
 ## License
 
-Free-to-use and modify with attribution to NumDev2310.
+MIT license. Free-to-use and modify with attribution to NumDev2310.
+
+Copyright 2024, NumDev2310.
